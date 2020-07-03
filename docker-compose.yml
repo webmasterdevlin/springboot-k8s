@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  app:
+    container_name: app
+    image: webmasterdevlin/springboot-mongo:1.0.4
+    restart: always
+    ports:
+      - "8080:8080"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27018:27017"
